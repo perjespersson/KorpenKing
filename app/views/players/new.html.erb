@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h1 class="mb-4">Add Player</h1>
+
+  <%= form_with model: @player, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <%= form.submit "Create Player", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "Back", players_path, class: "btn btn-secondary mt-3" %>
+</div>

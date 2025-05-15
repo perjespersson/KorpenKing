@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h1 class="mb-4">New Position</h1>
+
+  <%= form_with model: @position, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :coefficient, class: "form-label" %>
+      <%= form.number_field :coefficient, step: 0.1, class: "form-control" %>
+    </div>
+
+    <%= form.submit "Create Position", class: "btn btn-primary" %>
+    <%= link_to "Back", positions_path, class: "btn btn-secondary ms-2" %>
+  <% end %>
+</div>
