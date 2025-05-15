@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.rounded-top-right {
+  border-top-right-radius: 0.5rem;
+}
+
+.rounded-top-left {
+  border-top-left-radius: 0.5rem;
+}

@@ -19,7 +19,8 @@ class PositionsController < ApplicationController
     @position = Position.new(position_params)
 
     if @position.save
-      redirect_to positions_path, notice: "Position was successfully created."
+      flash[:notice] = "Position skapades framgångsrikt!"
+      redirect_to positions_path
     else
       render :new
     end
@@ -29,7 +30,8 @@ class PositionsController < ApplicationController
     @position = Position.find(params[:id])
 
     if @position.update(position_params)
-      redirect_to positions_path, notice: "Position was successfully updated."
+      flash[:notice] = "Position uppdatering lyckades!"
+      redirect_to positions_path
     else
       render :edit
     end
@@ -38,7 +40,8 @@ class PositionsController < ApplicationController
   def destroy
     @position = Position.find(params[:id])
     @position.destroy
-    redirect_to positions_path, notice: "Position was successfully deleted."
+    flash[:notice] = "Position raderingen lyckades!"
+    redirect_to positions_path
   end
 
   private
